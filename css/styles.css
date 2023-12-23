@@ -250,12 +250,12 @@ blockquote {
 }
 
 #askModalContent {
-    background-image: url("/assets/bg/hearts.gif");
+    background-image: url("../assets/bg/hearts.gif");
     background-size: cover;
 }
 
 #celebrationModalContent {
-    background-image: url("/assets/bg/fireworks4.gif");
+    background-image: url("../assets/bg/fireworks4.gif");
     background-size: cover;
     background-position: center;
     opacity: 0.5;
