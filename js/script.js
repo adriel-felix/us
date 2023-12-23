@@ -60,7 +60,7 @@ audio.onended = function() {
 }
 
 function changeMusic(musicName) {
-  audio.setAttribute("src", `../assets/audio/${musicName}.mp3`);
+  audio.setAttribute("src", `./assets/audio/${musicName}.mp3`);
   audio.load();
   audio.play();
 }
