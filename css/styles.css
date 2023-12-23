@@ -46,7 +46,8 @@ header p {
 
 .timeline::before {
     content: '';
-    background: linear-gradient(45deg, #E94057, #8A2387); /*#C5CAE9;*/
+    background: linear-gradient(45deg, #E94057, #8A2387);
+    /*#C5CAE9;*/
     width: 5px;
     height: 95%;
     position: absolute;
@@ -96,6 +97,14 @@ header p {
     box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
 }
 
+.timeline-content h2 {
+    margin-bottom: 0;
+}
+
+.timeline-content p {
+    margin-top: 5px;
+}
+
 .timeline-content::after {
     content: '';
     position: absolute;
@@ -111,7 +120,8 @@ header p {
 .timeline-img {
     width: 30px;
     height: 30px;
-    background: linear-gradient(45deg,  #E94057, #8A2387); /* #3F51B5; */
+    background: linear-gradient(45deg, #E94057, #8A2387);
+    /* #3F51B5; */
     border-radius: 50%;
     position: absolute;
     left: 50%;
@@ -212,6 +222,61 @@ blockquote {
     right: 0;
 }
 
+.gradient-top-border {
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(45deg, #E94057, #8A2387);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+}
+
+#new-item-content {
+    animation: glowAnimation 2s ease-in-out infinite;
+    overflow: hidden; /* Para esconder as partes dos corações fora do card */
+}
+
+#new-item-content:hover {
+    cursor: pointer;
+}
+
+#audioPlayer {
+    display: none;
+}
+
+#us-title:hover {
+    cursor: pointer;
+}
+
+#askModalContent {
+    background-image: url("/assets/bg/hearts.gif");
+    background-size: cover;
+}
+
+#celebrationModalContent {
+    background-image: url("/assets/bg/fireworks4.gif");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+}
+
+#celebrationModalBody {
+    opacity: 1 !important;
+}
+
+@keyframes glowAnimation {
+    0% {
+        box-shadow: 0 0 15px 5px rgba(233, 64, 87, 0.7); /* Brilho inicial */
+      }
+      50% {
+        box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.9); /* Brilho máximo */
+      }
+      100% {
+        box-shadow: 0 0 15px 5px rgba(233, 64, 87, 0.7); /* Retorno ao brilho inicial */
+      }
+}
+
 @media screen and (max-width: 768px) {
     .timeline::before {
         left: 50px;
@@ -241,6 +306,11 @@ blockquote {
         left: -15px;
         border-width: 10px 15px 10px 0;
         border-color: transparent #f5f5f5 transparent transparent;
+    }
+
+    .date {
+        left: 0;
+        right: auto;
     }
 }
 
