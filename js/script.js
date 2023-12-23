@@ -52,7 +52,6 @@ $(function () {
 
 
 let audio = document.getElementById("audioPlayer");
-audio.play();
 
 audio.onended = function() {
   audio.currentTime = 0;
