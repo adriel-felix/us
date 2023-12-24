@@ -68,14 +68,6 @@ window.onwheel = function(event) {
   }
 }
 
-window.ontouchstart = function() {
-  playAudio();
-}
-
-window.ontouchmove = function() {
-  playAudio();
-}
-
 function playAudio() {
   audio.play();
 }
@@ -93,10 +85,6 @@ function setDefaultAudioVolume() {
 
 $('#new-item-content').click(function() {
   changeMusic("Jungkook-MyYou");
-});
-
-$('#us-title').click(function(){
-  changeMusic("BTS-MagicShop");
 });
 
 let position = 0;
@@ -135,6 +123,9 @@ function showLoveText() {
   let fireworkPlayer = document.getElementById("fireworkPlayer");
   fireworkPlayer.volume = 0.2;
   fireworkPlayer.play();
+
+  changeMusic("BTS-MagicShop");
+  window.scrollTo(0, 0);
 
   hiddenText.style.display = 'block';
   hiddenText.innerHTML = '';
@@ -232,3 +223,34 @@ function hideLoveText() {
   hiddenText3.style.display = 'none';
   hiddenText4.style.display = 'none';
 }
+
+const hiddenMenu = document.getElementById('hiddenMenu');
+const arrowButton = document.getElementById('arrowButton');
+
+arrowButton.addEventListener('click', () => {
+  hiddenMenu.classList.toggle('expanded');
+});
+
+
+const playButton = document.getElementById('playButton');
+const pauseButton = document.getElementById('pauseButton');
+const muteButton = document.getElementById('muteButton');
+
+
+playButton.addEventListener('click', () => {
+  audio.play();
+});
+
+pauseButton.addEventListener('click', () => {
+  audio.pause();
+});
+
+muteButton.addEventListener('click', () => {
+  if (audio.muted) {
+    audio.muted = false;
+    muteButton.innerHTML = '<img src="./assets/icons/volume-xmark-solid.svg" alt="">';
+  } else {
+    audio.muted = true;
+    muteButton.innerHTML = '<img src="./assets/icons/volume-high-solid.svg" alt="">';
+  }
+});

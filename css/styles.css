@@ -293,6 +293,45 @@ blockquote {
     border-radius: 4px;
 }
 
+#hiddenMenu {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    width: 30px;
+}
+
+#arrowButton {
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+#arrowIcon {
+    font-size: 24px;
+}
+
+#audioControls {
+    flex-direction: column;
+}
+
+#hiddenMenu.expanded {
+    width: 190px;
+}
+
+#hiddenMenu.expanded #arrowButton {
+    transform: rotate(180deg);
+}
+  
+
 @keyframes fadeIn {
     0% {
         opacity: 0;

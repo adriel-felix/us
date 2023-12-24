@@ -15,7 +15,7 @@
 
     <header>
         <div class="container text-center">
-            <h1 id="us-title">Nós...</h1>
+            <h1>Nós...</h1>
             <p>Para sempre</p>
         </div>
     </header>
@@ -175,11 +175,22 @@
 
     <iframe src="./assets/audio/250-milliseconds-of-silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
     <audio id="audioPlayer" autoplay>
-        <source src="./assets/audio/BTS-MagicShop.mp3" type="audio/mp3">
+        <source src="./assets/audio/Coldplay-TheScientistInstrumental.mp3" type="audio/mp3">
     </audio>
     <audio id="fireworkPlayer">
         <source src="./assets/audio/fireworks.mp3" type="audio/mp3">
     </audio>
+
+    <div id="hiddenMenu">
+        <div id="arrowButton">
+            <span id="arrowIcon" class="d-flex align-items-center"><img src="./assets/icons/chevron-left-solid.svg" alt=""></span>
+        </div>
+        <div id="audioControls" class="d-flex flex-row">
+            <button id="playButton" class="btn btn-outline-secondary ms-3"><img src="./assets/icons/play-solid.svg" alt=""></button>
+            <button id="pauseButton" class="btn btn-outline-secondary ms-1"><img src="./assets/icons/pause-solid.svg" alt=""></button>
+            <button id="muteButton" class="btn btn-outline-secondary ms-1"><img src="./assets/icons/volume-xmark-solid.svg" alt=""></button>
+        </div>
+    </div>
 
     <div class="d-flex text-center">
         <div class="hidden-text text-danger" id="hiddenText"></div>
