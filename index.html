@@ -140,9 +140,6 @@
                     <div class="date">08 DEZ 2023 ~ 17 DEZ 2023</div>
                     <div class="d-flex mt-5 align-items-center">
                         <h2>Viagem</h2>
-                        <button class="btn btn-link">
-                            <img src="assets/icons/image-regular.svg">
-                        </button>
                     </div>
                     <p>
                         A melhor semana do meu ano, muitas inseguranças foram embora, pude aprender muito com você e o pequeno, vivenciando um pouco do dia a dia 
@@ -180,6 +177,16 @@
     <audio id="audioPlayer" autoplay>
         <source src="./assets/audio/BTS-MagicShop.mp3" type="audio/mp3">
     </audio>
+    <audio id="fireworkPlayer">
+        <source src="./assets/audio/fireworks.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="d-flex text-center">
+        <div class="hidden-text text-danger" id="hiddenText"></div>
+        <div class="hidden-text text-danger" id="hiddenText2"></div>
+        <div class="hidden-text text-danger" id="hiddenText3"></div>
+        <div class="hidden-text text-danger" id="hiddenText4"></div>
+    </div>
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script src='https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js'></script>
@@ -192,13 +199,13 @@
         <div class="modal-content" id="askModalContent">
             <div class="modal-body">
                 <div class="gradient-top-border"></div>
-                <div class="d-flex flex-column justify-content-center align-items-center p-2">
+                <div class="d-flex flex-column justify-content-center align-items-center text-center p-2">
                     <p>Vamos escrever uma nova história juntos?</p>
                     <p>Temos uma vida inteira juntinhos pela frente!</p>
                     <p class="fw-bolder fs-2">Aceita namorar comigo?</p>
                     <div class="flex-row mt-3">
-                        <button type="button" class="btn btn-outline-danger btn-lg" onclick="onClickTest(this)" onmouseover="onMouseOverTest(this)">Não</button>
-                        <button type="button" class="btn btn-outline-success btn-lg ms-5" data-bs-toggle="modal" data-bs-target="#celebrationModal" onclick="test()">Sim</button>
+                        <button type="button" class="btn btn-outline-danger btn-lg" onclick="onClickTest(this)" onmouseover="onMouseOverTest(this)" id="btn-deny">Não</button>
+                        <button type="button" class="btn btn-outline-success btn-lg ms-5" data-bs-toggle="modal" data-bs-target="#celebrationModal" onclick="showLoveText()">Sim</button>
                     </div>
                 </div>
             </div>
@@ -206,35 +213,9 @@
     </div>
 </div>
 
-<div class="modal fade" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="celebrationModal">
+<div class="modal fade" tabindex="-1" data-bs-keyboard="true" id="celebrationModal">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content" id="celebrationModalContent">
-            <div class="d-flex container-fluid justify-content-end">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-white" id="celebrationModalBody">
-                <div class="d-flex justify-content-center">
-                    <!-- <p class="fw-medium fs-5">Meu amor, eu te amo tanto!!!</p> -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" id="tripPhotosModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
         </div>
     </div>
 </div>

@@ -245,6 +245,10 @@ blockquote {
     display: none;
 }
 
+#fireworkPlayer {
+    display: none;
+}
+
 #us-title:hover {
     cursor: pointer;
 }
@@ -263,6 +267,40 @@ blockquote {
 
 #celebrationModalBody {
     opacity: 1 !important;
+}
+
+#tripPhotosModalBody {
+    opacity: 1 !important;
+}
+
+#btn-deny:hover {
+    background-color: inherit !important;
+    color: #c6303e;
+}
+
+.hidden-text {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    z-index: 5000;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    width: 90vw;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes glowAnimation {
@@ -317,5 +355,9 @@ blockquote {
 @media screen and (min-width: 768px) {
     header {
         background-image: url("../assets/img/selfie-acude\ \(1\).jpg");
+    }
+    .hidden-text {
+        font-size: 3.0rem;
+        width: 50vw;
     }
 }
