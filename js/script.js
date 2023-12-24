@@ -55,19 +55,30 @@ let audio = document.getElementById("audioPlayer");
 
 audio.onended = function() {
   audio.currentTime = 0;
-  audio.play();
+  playAudio();
 }
 
 window.onscroll = function() {
-  audio.play();
+  playAudio();
 }
 
 window.onwheel = function(event) {
   if (event.button === 1){
-    audio.play();
+    playAudio();
   }
 }
 
+window.ontouchstart = function() {
+  playAudio();
+}
+
+window.ontouchmove = function() {
+  playAudio();
+}
+
+function playAudio() {
+  audio.play();
+}
 
 function changeMusic(musicName) {
   audio.setAttribute("src", `./assets/audio/${musicName}.mp3`);
